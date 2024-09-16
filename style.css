@@ -1,0 +1,247 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #000;
+
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+header .logo span {
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+header img {
+    width: 32px;
+    height: 32px;
+}
+
+nav {
+
+    justify-content: space-evenly;
+    border-bottom: 1px solid#000;
+    padding: 10px 0;
+
+}
+
+nav a {
+    padding: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar {
+    border-right: 1px solid #000;
+    width: 20%;
+    padding: 10px
+}
+
+.conteiner {
+    display: flex;
+    flex-grow: 1;
+}
+
+.main {
+    width: 80%;
+    padding: 20px;
+
+}
+
+.me {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 50%;
+}
+
+.meimg {
+    border: 1px solid #000
+}
+
+.meimg p {
+    border-top: 1px solid #000;
+    padding: 10px 0;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 10px 0;
+    border-top: 1px solid #000;
+    align-items: center;
+    position: relative;
+}
+
+.links {
+    position: absolute;
+    right: 10px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 380px;
+    border: 3px solid #000;
+}
+
+.card p {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.card button {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    right: -150px;
+    top: -5px;
+}
+
+.card img {
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
+    border-bottom: 3px solid #000;
+
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    transition: all .8s ease-out;
+}
+
+
+.modal.open {
+    visibility: visible;
+    z-index: 100;
+    opacity: 1;
+
+}
+
+.modal .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.7;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.modal-window {
+    position: relative;
+    z-index: 101;
+    width: 320px;
+    height: 560px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+    background-color: #fff;
+    padding: 30px;
+}
+
+.btn-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: none;
+    background: none;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+
+.modal-window form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+}
+
+.modal-window label {
+    margin-bottom: 5px;
+}
+
+.modal-window
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-window
+input[type="date"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100px;
+}
+
+.modal-window textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 64px;
+    resize: none;
+}
+
+.modal-window input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.modal-window div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
