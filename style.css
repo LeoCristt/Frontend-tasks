@@ -100,6 +100,7 @@ footer {
     right: 10px;
 }
 
+/* Стили index2.html */
 .cards {
     display: flex;
     justify-content: space-between;
@@ -134,8 +135,9 @@ footer {
     border-bottom: 3px solid #000;
 
 }
+/* Конец index2.html */
 
-
+/* Модальное окно на index2.html */
 .modal {
     position: fixed;
     top: 0;
@@ -175,7 +177,6 @@ footer {
     position: relative;
     z-index: 101;
     width: 320px;
-    height: 560px;
     border-radius: 10px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
     background-color: #fff;
@@ -200,48 +201,61 @@ footer {
     display: flex;
     flex-direction: column;
     width: 300px;
-    height: 300px;
 }
 
 .modal-window label {
     margin-bottom: 5px;
+
 }
 
-.modal-window
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-select {
+.modal-window input,select {
     padding: 10px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
+
 }
 
-.modal-window
-input[type="date"] {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100px;
-}
 
 .modal-window textarea {
     padding: 10px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     height: 64px;
     resize: none;
 }
-
-.modal-window input[type="checkbox"] {
-    margin-right: 5px;
+.checkbox label{
+    cursor: pointer;
 }
 
-.modal-window div{
-    display: flex;
+.modal-window .field {
+    display: grid;
+    grid-template-columns: 100px auto;
+    gap: 10px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
+    margin-bottom: 20px;
+}
+
+/* Конец модального окна */
+
+/* Стили index3.html */
+
+table{
+    width: 550px;
+    border-top:7px solid #000;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border:2px solid #000
+}
+
+.tr-0{
+    background-color:rgb(156, 155, 155)
+}
+
+.tr-1{
+    background-color: rgb(201, 200, 200);
+}
+
+.table-2{
+    width: 750px;
 }

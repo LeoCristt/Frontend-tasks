@@ -61,9 +61,10 @@ form.addEventListener('input', () => {
   if (name && email && phone && country && date && comment && agreement) {
     submitButton.removeAttribute('disabled');
     submitButton.addEventListener('click', (e) => {
-      e.preventDefault();
+      e.preventDefault(); 
       alert('Форма успешно отправлена!');
-      closeModalBtn.click(); // Закрытие модального окна после отправки формы
+      submitButton.removeAttribute('disabled'); 
+      closeModalBtn.click(); // Закрытие модального окна
     });
   } else {
     submitButton.setAttribute('disabled', 'disabled');
