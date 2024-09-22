@@ -1,19 +1,12 @@
 // Открытие модального окна
-document.getElementById("open-modal-btn").addEventListener("click", function(){
-    document.getElementById("my-modal").classList.add("open")
-})
-
-
-// Открытие модального окна-2
-document.getElementById("open-modal-btn-2").addEventListener("click", function(){
-    document.getElementById("my-modal").classList.add("open")
-})
-
-// Открытие модального окна-3
-document.getElementById("open-modal-btn-3").addEventListener("click", function(){
-    document.getElementById("my-modal").classList.add("open")
-})
-
+const modalButtons = document.querySelectorAll('#open-modal-btn');
+modalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    let title = button.getAttribute('data-title')
+    document.getElementById("modal-title").textContent = title;
+    document.getElementById("my-modal").classList.add("open");
+  });
+});
 
 // Закрытие модального окна по крестику
 document.getElementById("close-modal-btn").addEventListener("click", function(){
@@ -59,14 +52,33 @@ form.addEventListener('input', () => {
   const agreement = agreementCheckbox.checked;
 
   if (name && email && phone && country && date && comment && agreement) {
+    console.log('Enabling submit button');
     submitButton.removeAttribute('disabled');
-    submitButton.addEventListener('click', (e) => {
-      e.preventDefault(); 
-      alert('Форма успешно отправлена!');
-      submitButton.removeAttribute('disabled'); 
-      closeModalBtn.click(); // Закрытие модального окна
-    });
   } else {
+    console.log('Disabling submit button');
     submitButton.setAttribute('disabled', 'disabled');
   }
 });
+
+submitButton.addEventListener('click', submitHandler);
+
+function submitHandler(e) {
+  e.preventDefault();
+  console.log('Submit button clicked!');
+  alert('Форма успешно отправлена!');
+
+  
+  nameInput.value = '';
+  emailInput.value = '';
+  phoneInput.value = '';
+  countrySelect.value = '';
+  dateInput.value = '';
+  commentTextarea.value = '';
+  agreementCheckbox.checked = false;
+
+  submitButton.removeAttribute('disabled');
+  closeModalBtn.click(); // Закрытие модального окна
+
+  // Remove the event listener to prevent multiple submissions
+  submitButton.removeEventListener('click', submitHandler);
+}

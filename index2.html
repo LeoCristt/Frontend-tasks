@@ -41,18 +41,18 @@
                         <img src="https://img.freepik.com/premium-photo/a-white-object-with-a-symbol-on-it-that-says-no_32807-1061.jpg?w=826"
                             alt="">
                         <p>Web app 1</p>
-                        <button id="open-modal-btn">Заказать</button>
+                        <button id="open-modal-btn" data-title = "Web app 1">Заказать</button>
                     </div>
                     <div class="card">
                         <img src="https://s.tmimgcdn.com/scr/54000/54099-original.jpg" alt="">
                         <p>Web app 2</p>
-                        <button id="open-modal-btn-2">Заказать</button>
+                        <button id="open-modal-btn" data-title = "Web app 2">Заказать</button>
                     </div>
                     <div class="card">
                         <img src="https://cdn.cssauthor.com/wp-content/uploads/2015/09/Sedna.jpg?strip=all&lossy=1&resize=1000%2C600"
                             alt="">
                         <p>Web app 3</p>
-                        <button id="open-modal-btn-3">Заказать</button>
+                        <button id="open-modal-btn" data-title = "Web app 3">Заказать</button>
                     </div>
                 </div>
             </section>
@@ -93,7 +93,7 @@
     </footer>
     <div class="modal" id="my-modal">
         <div class="modal-window">
-            <h2>Разработка веб-приложения</h2>
+            <h2>Разработка <span id = "modal-title"></span></h2>
             <p>Заполните форму и мы обязательно свяжемся с вами в ближайшее время для уточнения деталей</p>
             <form>
                 <div class="field">
@@ -128,8 +128,8 @@
                     <input type="checkbox" id="agreement" />
                     <label for="agreement">Согласен на обработку моих персональных данных</label>
                 </div>
-                <div class="button" style="display: flex;justify-content: center;">
-                    <button type="submit" class="button" style="margin: 8px; padding: 8px;">Отправить заявку</button>
+                <div style="display: flex;justify-content: center;">
+                    <button type="submit" class="button" style="margin: 8px; padding: 8px;" disabled="disabled">Отправить заявку</button>
                 </div>
             </form>
             <div class="modal-window-close">
