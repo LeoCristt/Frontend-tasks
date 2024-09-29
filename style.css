@@ -1,11 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+::-webkit-scrollbar {
+    /* chrome based */
+    width: 0px;
+    /* ширина scrollbar'a */
+    background: transparent;
+    /* опционально */
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 15px;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #dbd8d8;
 }
 
 header {
@@ -37,7 +48,7 @@ header img {
 }
 
 nav {
-
+    background-color: aquamarine;
     justify-content: space-evenly;
     border-bottom: 1px solid#000;
     padding: 10px 0;
@@ -45,22 +56,67 @@ nav {
 }
 
 nav a {
+    font-size: 18px;
     padding: 10px;
     margin-right: 10px;
     text-decoration: none;
     color: black;
+    transition: color 0.2s ease;
+    /* добавляем эффект при наведении */
+}
+
+nav a:hover {
+    color: #ff0000;
+    /* изменяем цвет текста при наведении */
+}
+
+nav a:active {
+    color: #0a1dee;
+    /* изменяем цвет текста при клике */
 }
 
 .sidebar {
     border-right: 1px solid #000;
     width: 20%;
-    padding: 10px
+    padding: 10px;
+    background-color: #aaa9ad3f;
+}
+
+.sidebar a {
+    text-decoration: none;
+
+}
+
+.sidebar a:hover {
+    color: #ff0000;
+    /* изменяем цвет текста при наведении */
+}
+
+.sidebar a:active {
+    color: #0a1dee;
+    /* изменяем цвет текста при клике */
 }
 
 .conteiner {
     display: flex;
     flex-grow: 1;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Arial', sans-serif;
+    /* изменяем шрифт */
+    color: #333;
+    /* изменяем цвет текста */
+}
+
+
+
+
 
 .main {
     width: 80%;
@@ -76,7 +132,8 @@ nav a {
 }
 
 .meimg {
-    border: 1px solid #000
+    border: 1px solid #000;
+    background-color: white;
 }
 
 .meimg p {
@@ -113,6 +170,22 @@ footer {
     border: 3px solid #000;
 }
 
+.card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* добавляем тень */
+    border: 1px solid #ddd;
+    /* добавляем границы */
+    padding: 20px;
+    /* добавляем отступы */
+    transition: transform 0.2s ease;
+    /* добавляем эффект при наведении */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    /* изменяем положение при наведении */
+}
+
 .card p {
     margin: 0;
     padding: 10px;
@@ -128,6 +201,32 @@ footer {
     top: -5px;
 }
 
+button {
+    background-color: #333;
+    /* изменяем цвет фона */
+    color: #fff;
+    /* изменяем цвет текста */
+    padding: 10px 20px;
+    /* добавляем отступы */
+    border: none;
+    /* удаляем границы */
+    cursor: pointer;
+    /* изменяем курсор */
+    transition: background-color 0.2s ease;
+    /* добавляем эффект при наведении */
+}
+
+button:hover {
+    background-color: #555;
+    /* изменяем цвет фона при наведении */
+}
+
+button:disabled {
+    background-color: #ff3737; /* изменяем цвет фона на красный, когда кнопка disabled */
+    cursor: not-allowed; /* изменяем курсор на "неallowed", чтобы показать, что кнопка не активна */
+    opacity: 0.5; /* добавляем полупрозрачность, чтобы кнопка выглядела неактивной */
+}
+
 .card img {
     width: 100%;
     height: 225px;
@@ -135,6 +234,7 @@ footer {
     border-bottom: 3px solid #000;
 
 }
+
 /* Конец index2.html */
 
 /* Модальное окно на index2.html */
@@ -179,7 +279,7 @@ footer {
     width: 320px;
     border-radius: 10px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
-    background-color: #fff;
+    background-color: #dbd8d8;
     padding: 30px;
 }
 
@@ -188,7 +288,6 @@ footer {
     right: 20px;
     top: 20px;
     border: none;
-    background: none;
     opacity: 0.7;
     cursor: pointer;
 }
@@ -208,7 +307,8 @@ footer {
 
 }
 
-.modal-window input,select {
+.modal-window input,
+select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -223,7 +323,8 @@ footer {
     height: 64px;
     resize: none;
 }
-.checkbox label{
+
+.checkbox label {
     cursor: pointer;
 }
 
@@ -240,22 +341,22 @@ footer {
 
 /* Стили index3.html */
 
-table{
+table {
     width: 550px;
-    border-top:7px solid #000;
+    border-top: 7px solid #000;
     border-collapse: collapse;
     margin-bottom: 20px;
-    border:2px solid #000
+    border: 2px solid #000
 }
 
-.tr-0{
-    background-color:rgb(156, 155, 155)
+.tr-0 {
+    background-color: rgb(156, 155, 155)
 }
 
-.tr-1{
+.tr-1 {
     background-color: rgb(201, 200, 200);
 }
 
-.table-2{
+.table-2 {
     width: 750px;
 }
