@@ -16,7 +16,13 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #dbd8d8;
+    background-color: white;
+}
+
+.grid-bg {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 70px 70px;
 }
 
 header {
@@ -24,8 +30,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #000;
-
+    border: 1px solid #000;
+    border-radius: 50px;
+    background-color: #aaa9ad3f;
 }
 
 header .logo {
@@ -51,9 +58,11 @@ nav {
     background-color: aquamarine;
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px solid#000;
-    
-
+    border: 1px solid#000;
+    border-radius: 50px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 nav a {
@@ -63,11 +72,14 @@ nav a {
     text-decoration: none;
     color: black;
     transition: color 0.2s ease;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 50px;    
     /* добавляем эффект при наведении */
 }
-
 nav a:hover {
     color: #ff0000;
+    background-color: #ccc;
+    text-decoration: underline;
     /* изменяем цвет текста при наведении */
 }
 
@@ -77,15 +89,42 @@ nav a:active {
 }
 
 .sidebar {
-    border-right: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #000;
     width: 20%;
     padding: 10px;
     background-color: #aaa9ad3f;
+    border-radius: 50px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
 }
 
-.sidebar a {
-    text-decoration: none;
 
+.sidebar a {
+    color: #000000;
+    position: relative;
+    text-decoration: none;
+}
+
+.sidebar a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.sidebar a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
 }
 
 .sidebar a:hover {
@@ -101,6 +140,7 @@ nav a:active {
 .conteiner {
     display: flex;
     flex-grow: 1;
+
 }
 
 h1,
@@ -115,14 +155,12 @@ h6 {
     /* изменяем цвет текста */
 }
 
-
-
-
-
 .main {
     width: 80%;
     padding: 20px;
-
+    border-radius: 50px;
+    border: 1px solid #000;
+    background-color: #aaa9ad3f;
 }
 
 .me {
@@ -148,9 +186,11 @@ footer {
     justify-content: center;
     display: flex;
     padding: 10px 0;
-    border-top: 1px solid #000;
+    border: 1px solid #000;
+    border-radius: 50px;
     align-items: center;
     position: relative;
+    background-color: #aaa9ad3f;
 }
 
 .links {
@@ -160,10 +200,9 @@ footer {
 
 /* Стили index2.html */
 .cards {
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
 
 .card {
@@ -172,7 +211,8 @@ footer {
 }
 
 .card {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: auto;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     /* добавляем тень */
     border: 1px solid #ddd;
     /* добавляем границы */
@@ -180,6 +220,7 @@ footer {
     /* добавляем отступы */
     transition: transform 0.2s ease;
     /* добавляем эффект при наведении */
+    position: relative;
 }
 
 .card:hover {
@@ -223,9 +264,12 @@ button:hover {
 }
 
 button:disabled {
-    background-color: #ff3737; /* изменяем цвет фона на красный, когда кнопка disabled */
-    cursor: not-allowed; /* изменяем курсор на "неallowed", чтобы показать, что кнопка не активна */
-    opacity: 0.5; /* добавляем полупрозрачность, чтобы кнопка выглядела неактивной */
+    background-color: #ff3737;
+    /* изменяем цвет фона на красный, когда кнопка disabled */
+    cursor: not-allowed;
+    /* изменяем курсор на "неallowed", чтобы показать, что кнопка не активна */
+    opacity: 0.5;
+    /* добавляем полупрозрачность, чтобы кнопка выглядела неактивной */
 }
 
 .card img {
@@ -237,6 +281,7 @@ button:disabled {
 }
 
 /* Конец index2.html */
+
 
 /* Модальное окно на index2.html */
 .modal {
@@ -313,7 +358,30 @@ select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
 
+input:hover {
+    border-color: #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    /* добавляем тень */
+}
+
+.agreement {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+textarea:hover {
+    border-color: #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    /* добавляем тень */
+}
+
+select:hover {
+    border-color: #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    /* добавляем тень */
 }
 
 
@@ -331,6 +399,7 @@ select {
 
 .modal-window .field {
     display: grid;
+    grid-template-rows: auto;
     grid-template-columns: 100px auto;
     gap: 10px;
     align-items: center;
@@ -354,10 +423,70 @@ table {
     background-color: rgb(156, 155, 155)
 }
 
+.tr-1:hover {
+    background-color: rgb(156, 155, 155, 0.4);
+}
+
+
 .tr-1 {
     background-color: rgb(201, 200, 200);
 }
 
+.tr-2{
+    background-color: rgb(255, 255, 255);
+}
+
+.tr-2:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+
 .table-2 {
     width: 750px;
+}
+
+/* Стиль checkbox */
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--form-background);
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+    --form-control-color: var(--form-control-disabled);
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
 }
