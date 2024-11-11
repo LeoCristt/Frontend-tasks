@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <title>1 Semester</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+    ::-webkit-scrollbar {
+        /* chrome based */
+        width: 0px;
+        /* ширина scrollbar'a */
+        background: transparent;
+        /* опционально  */
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100dvh;
+        background: linear-gradient(#123 30%, #667);
+        background-attachment: fixed;
+    }
+
+    h1,
+    h2 {
+        font-family: 'Playfair Display', serif;
+    }
+
+    h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.75rem;
+    }
+
+    blockquote {
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .snow,
+    .snow:before,
+    .snow:after {
+        position: absolute;
+        top: -600px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: radial-gradient(4px 4px at 300px 300px, rgba(255, 255, 255, 0.5) 50%, rgba(0, 0, 0, 0));
+
+        background-size: 600px 600px;
+        animation: snow 3s linear infinite;
+        content: "";
+        z-index: -1;
+    }
+
+    .snow:after {
+        margin-left: -200px;
+        opacity: 0.4;
+        animation-duration: 6s;
+        animation-direction: reverse;
+        filter: blur(3px);
+    }
+
+    .snow:before {
+        animation-duration: 9s;
+        animation-direction: reverse;
+        margin-left: -300px;
+        opacity: 0.65;
+        filter: blur(1.5px);
+    }
+
+    @keyframes snow {
+        0% {
+            transform: translateY(-600px);
+        }
+
+        100% {
+
+            transform: translateX(0);
+        }
+    }
+
+
+    header .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    header .logo span {
+        font-size: 20px;
+        color: white;
+
+    }
+
+    main {
+        flex-grow: 1;
+    }
+
+    header img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .navbar {
+        align-items: center;
+        padding: 10px;
+        border: 3px solid;
+        border-radius: 9999px;
+        color: white;
+        align-items: center;
+    }
+
+    footer {
+        align-items: center;
+        padding: 10px;
+        border: 3px solid;
+        border-radius: 9999px;
+        color: white;
+        align-items: center;
+    }
+
+
+
+    #scroll_top {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+        width: 32px;
+        height: 32px;
+        background: url(png-transparent-arrow-ocal-blue-trademark-triangle.png) 50% 50% no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+
+    }
+
+    #scroll_top:hover {
+        opacity: 1;
+    }
+
+    table {
+        width: 550px;
+        border-top: 7px solid #000;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        border: 2px solid #000
+    }
+
+    .tr-0 {
+        background-color: rgb(156, 155, 155)
+    }
+
+    .tr-1:hover {
+        background-color: rgb(156, 155, 155, 0.4);
+    }
+
+
+    .tr-1 {
+        background-color: rgb(201, 200, 200);
+    }
+
+    .tr-2 {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .tr-2:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .carousel-inner img {
+        height: 400px;
+        object-fit: cover;
+    }
+
+
+    .table-2 {
+        width: 750px;
+    }
+
+    /* Стиль checkbox */
+
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: var(--form-background);
+        margin: 0;
+        font: inherit;
+        color: currentColor;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.15em solid currentColor;
+        border-radius: 0.15em;
+        transform: translateY(-0.075em);
+
+        display: grid;
+        place-content: center;
+    }
+
+    input[type="checkbox"]::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        transform: scale(0);
+        transform-origin: bottom left;
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+        background-color: CanvasText;
+    }
+
+    input[type="checkbox"]:checked::before {
+        transform: scale(1);
+    }
+
+    input[type="checkbox"]:focus {
+        outline: max(2px, 0.15em) solid currentColor;
+        outline-offset: max(2px, 0.15em);
+    }
+
+    input[type="checkbox"]:disabled {
+        --form-control-color: var(--form-control-disabled);
+        color: var(--form-control-disabled);
+        cursor: not-allowed;
+    }
+
+    @media (max-width: 480px) {
+        body {
+            background: linear-gradient(#123 200%, #667);
+        }
+
+        nav {
+            border-radius: 0 !important;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .table-2 {
+            width: 100%;
+            height: auto;
+        }
+
+        iframe {
+            width: 100%;
+        }
+
+        embed {
+            width: 100%;
+            height: 300px;
+        }
+        .card-body{
+            width: 100%!important;
+        }
+    }
+</style>
+
+<body>
+    <header class="px-3 py-2 text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="logo">
+                    <span style="color:white">Crist</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg d-flex space-between fixed navbar-dark">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" style="border: var(--bs-border-width) solid rgb(255 255 255);"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+                <span class="navbar-toggler-icon" style="color: rgb(255, 255, 255,);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"
+                style="width: 100%!important; color: white!important;">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color: white;">
+                            Главная
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Bootstrap1.html">Фронтенд</a></li>
+                            <li><a class="dropdown-item" href="Bootstrap1.html">Бекенд</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color: white;">
+                            Первый семестр
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#element">Лекции</a></li>
+                            <li><a class="dropdown-item" href="#element2">Практики</a></li>
+                            <li><a class="dropdown-item" href="#element3">Адрес вуза</a></li>
+                            <li><a class="dropdown-item" href="#element4">Рабочая программа</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true" style="color: rgb(255, 255, 255,0.5);">Второй
+                            семестр</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color: white;">
+                            Услуги
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Bootstrap.html">Разработка веб-приложений</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true"
+                            style="color: rgb(255, 255, 255,0.5);">Авторизация</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <main class="container text-white">
+        <section id="element1">
+            <div class="card my-4 shadow">
+                <div class="card-body">
+                    <h1>Первый семестр</h1>
+                    <h3 id="element1">Лекции</h3>
+                    <table>
+                        <tr class="tr-0">
+                            <td>Номер</td>
+                            <td>Тема</td>
+                            <td>Посещение</td>
+                        </tr>
+                        <tr class="tr-1">
+                            <td>1</td>
+                            <td>Основы языка HTML</td>
+                            <td><input type="checkbox" name="" id="" checked></td>
+                        </tr>
+                        <tr class="tr-2">
+                            <td>2</td>
+                            <td>Углубленное изучение HTML</td>
+                            <td><input type="checkbox" name="" id="" checked></td>
+                        </tr>
+                        <tr class="tr-1">
+                            <td>3</td>
+                            <td>Основы работы с CSS</td>
+                            <td><input type="checkbox" name="" id="" checked></td>
+                        </tr>
+                        <tr class="tr-2">
+                            <td>4</td>
+                            <td>Адаптивная верстка. Flexbox и Grid Layout</td>
+                            <td><input type="checkbox" name="" id=""></td>
+                        </tr>
+                        <tr class="tr-1">
+                            <td>5</td>
+                            <td>Bootstrap - работа с фреймворком</td>
+                            <td><input type="checkbox" name="" id=""></td>
+                        </tr>
+                        <tr class="tr-2">
+                            <td>6</td>
+                            <td>Основы языка JavaScript</td>
+                            <td><input type="checkbox" name="" id=""></td>
+                        </tr>
+                        <tr class="tr-1">
+                            <td>7</td>
+                            <td>Работы с DOM и событиями в JavaScript</td>
+                            <td><input type="checkbox" name="" id=""></td>
+                        </tr>
+                        <tr class="tr-2">
+                            <td>8</td>
+                            <td>Ввежедние в GitHub и GitHub Pages</td>
+                            <td><input type="checkbox" name="" id=""></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="card">
+                <div class="card-body">
+                    <h3 id="element2">Практики</h3>
+                    <table class="table-2">
+                        <tr class="tr-0">
+                            <td>Номер</td>
+                            <td>Тема</td>
+                            <td>Посещение</td>
+                            <td>Выполнение</td>
+                        </tr>
+                        <tr class="tr-1">
+                            <td>1</td>
+                            <td>Основы языка HTML</td>
+                            <td><input type="checkbox" checked></td>
+                            <td><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="tr-2">
+                            <td>2</td>
+                            <td>Формы и кнопки в HTML</td>
+                            <td><input type="checkbox" checked></td>
+                            <td><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="tr-1">
+                            <td>3</td>
+                            <td>Таблицы и интерактивные элементы HTML</td>
+                            <td><input type="checkbox" checked></td>
+                            <td><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="tr-2">
+                            <td>4</td>
+                            <td>Основы работы с CSS</td>
+                            <td><input type="checkbox" checked></td>
+                            <td><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="tr-1">
+                            <td>5</td>
+                            <td>Работа с классами в CSS</td>
+                            <td><input type="checkbox" checked></td>
+                            <td><input type="checkbox" checked></td>
+                        </tr>
+                        <tr class="tr-2">
+                            <td>6</td>
+                            <td>Работа с сетками и разметкой в HTML</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr class="tr-1">
+                            <td>7</td>
+                            <td>Адаптивная вёрстка</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr class="tr-2">
+                            <td>8</td>
+                            <td>Bootstrap</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr class="tr-1">
+                            <td>9</td>
+                            <td>Основы языка JavaScript</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr class="tr-2">
+                            <td>10</td>
+                            <td>Базовые задачи на JS</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr class="tr-1">
+                            <td>11</td>
+                            <td>DOM-структура приложений и работа с объектами в языке JS</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr class="tr-2">
+                            <td>12</td>
+                            <td>Встраивание скриптов</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr class="tr-1">
+                            <td>13</td>
+                            <td>Отладка сценариев</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr class="tr-2">
+                            <td>14</td>
+                            <td>Анимации и работа с ними</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr class="tr-1">
+                            <td>15</td>
+                            <td>Github</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr class="tr-2">
+                            <td>16</td>
+                            <td>Защита проекта</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section id="element3">
+            <div class="card my-4 shadow">
+                <div class="card-body">
+                    <h3 id="element3">Занятия проходят по адресу: просп. Вернадского, 78, стр. 4, Москва </h3>
+                    <script type="text/javascript" style="margin-bottom: 20px;" charset="utf-8" async
+                        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8a92e02f1b4cb34972454103adb827231a06791635b64116584953e0a90837a2&amp;width=415&amp;height=415&amp;lang=ru_RU&amp;scroll=true"></script>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="card my-4 shadow">
+                <div class="card-body">
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                    Тема Практики 1
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    HTML - Изучение HTML
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseTwo">
+                                    Тема практики 2
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body">
+                                    CSS - Изучение CSS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="card my-4 shadow d-flex justify-content-center align-items-center">
+                <div class="card-body w-50">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="result_44a7e4c2-b9dc-48e2-b836-7f8f90a2eecf.jpg" class="d-block w-100"
+                                    alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://avatars.mds.yandex.net/i?id=fd1c3b14954007a48e3d221df6ee2f3c_l-10160311-images-thumbs&n=13"
+                                    class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://avatars.mds.yandex.net/i?id=57e927c0b32c81012d46e2e440cabc66_l-6218602-images-thumbs&n=13"
+                                    class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="element4">
+            <div class="card my-4 shadow">
+                <div class="card-body">
+                    <h3>Рабочая программа</h3>
+                    <iframe src="file.pdf" style="width: 100%; height: 400px;" frameborder="0"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="container text-center">
+        <footer class=" d-flex justify-content-between my-2">
+            <p class="mb-0">Leo Crist</p>
+            <div class="social-icons">
+                <a href="https://t.me/OwnCrist" target="_blank">
+                    <svg width="32px" height="32px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <circle cx="16" cy="16" r="14" fill="url(#paint0_linear_87_7225)"></circle>
+                            <path
+                                d="M22.9866 10.2088C23.1112 9.40332 22.3454 8.76755 21.6292 9.082L7.36482 15.3448C6.85123 15.5703 6.8888 16.3483 7.42147 16.5179L10.3631 17.4547C10.9246 17.6335 11.5325 17.541 12.0228 17.2023L18.655 12.6203C18.855 12.4821 19.073 12.7665 18.9021 12.9426L14.1281 17.8646C13.665 18.3421 13.7569 19.1512 14.314 19.5005L19.659 22.8523C20.2585 23.2282 21.0297 22.8506 21.1418 22.1261L22.9866 10.2088Z"
+                                fill="white"></path>
+                            <defs>
+                                <linearGradient id="paint0_linear_87_7225" x1="16" y1="2" x2="16" y2="30"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#37BBFE"></stop>
+                                    <stop offset="1" stop-color="#007DBB"></stop>
+                                </linearGradient>
+                            </defs>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+    <div class="snow"></div>
+    <a href="#" id="scroll_top" title="Наверх"></a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"
+        type="text/javascript"></script>
+    <script>
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 100) {
+                    $('#scroll_top').show();
+                } else {
+                    $('#scroll_top').hide();
+                }
+            });
+
+            $('#scroll_top').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>
